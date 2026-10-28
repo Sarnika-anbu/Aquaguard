@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   AquaGuard Bright Aquatic Water Theme & Design Tokens
+   ========================================================================== */
+
+:root {
+  /* Refreshing Pure Water Color Palette */
+  --bg-primary: #031327;          /* Deep marine ocean blue */
+  --bg-secondary: #082846;        /* Rich aquatic card surface */
+  --bg-glass: rgba(8, 40, 70, 0.7);/* Crystalline translucent water glass */
+  --bg-glass-light: rgba(255, 255, 255, 0.85);
+
+  /* Water Accent Colors */
+  --accent-cyan: #00d2ff;         /* Pure water electric cyan */
+  --accent-blue: #0077b6;         /* Ocean blue */
+  --accent-aqua: #00f5d4;         /* Vibrant turquoise aqua */
+  --accent-sky: #90e0ef;          /* Light water spray sky blue */
+  
+  /* Status Colors */
+  --status-good: #10b981;         /* Emerald safe green */
+  --status-warning: #f59e0b;      /* Warning amber */
+  --status-danger: #ff4d4d;       /* Alert red */
+
+  /* Text & Typography */
+  --text-main: #ffffff;           /* Crisp bright white */
+  --text-muted: #b0c4de;          /* Soft water grey blue */
+
+  /* Glassmorphism & Water Glows */
+  --border-glass: rgba(0, 210, 255, 0.25);
+  --shadow-glow: 0 8px 32px 0 rgba(0, 210, 255, 0.3);
+  --shadow-water: 0 12px 40px rgba(0, 119, 182, 0.4);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: radial-gradient(circle at 50% 0%, #083b66 0%, #031327 70%, #010a17 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Water Glass Card Utility */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-water);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 45px rgba(0, 210, 255, 0.4);
+  border-color: var(--accent-cyan);
+}
+
+/* Water Primary Button */
+.btn-primary {
+  background: linear-gradient(135deg, #00d2ff 0%, #0077b6 100%);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 210, 255, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 28px rgba(0, 210, 255, 0.6);
+  background: linear-gradient(135deg, #00f5d4 0%, #00d2ff 100%);
+}

@@ -1,0 +1,74 @@
+/* ==========================================================================
+   AquaGuard Water & Liquid Animation Keyframes
+   ========================================================================== */
+
+/* 1. Water Drop Falling Keyframe */
+@keyframes dropFall {
+  0% {
+    transform: translateY(-120px) scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.1); /* Bounce slightly when reaching bottom */
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* 2. Liquid Wave Motion (Horizontal flow) */
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(1.1); /* Waves swell in middle */
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+
+/* 3. Water Ripple Effect (Expanding Rings) */
+@keyframes rippleExpand {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+    border: 2px solid var(--accent-cyan);
+  }
+  100% {
+    width: 250px;
+    height: 250px;
+    opacity: 0;
+    border: 2px solid var(--accent-blue);
+  }
+}
+
+/* 4. Live Sensor Breathing Pulse (For ESP32 Online status) */
+@keyframes statusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Utility Animation Classes */
+.animate-drop {
+  animation: dropFall 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-wave {
+  animation: waveMove 4s linear infinite;
+}
+
+.pulse-badge {
+  animation: statusPulse 2s infinite;
+}
